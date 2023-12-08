@@ -6,9 +6,11 @@ function App() {
   const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:9696/api/characters")
+    fetch(import.meta.env.VITE_BACKENDURL + "api/characters")
       .then((response) => response.json())
-      .then((data) => setHeroes(data));
+      .then((data) => {
+        setHeroes(data);
+      });
   }, [refresh]);
 
   return (

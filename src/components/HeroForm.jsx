@@ -5,7 +5,7 @@ export default function HeroForm(props) {
     event.preventDefault();
     const form = new FormData(event.target);
 
-    fetch("http://localhost:9696/api/characters", {
+    fetch(import.meta.env.VITE_BACKENDURL + "api/characters", {
       method: "POST",
       body: form,
     }).then((response) => {
